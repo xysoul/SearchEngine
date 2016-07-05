@@ -1,3 +1,37 @@
 This is a course project for Web Search and Mining which is used for search dblp.
 
 This is a search engine for DBLP. After crawling all three types of pages, author pages, conference proceedings pages and journal pages from DBLP (totally near 2 million web pages), we parse the web pages and construct index based on Lucene, a free and open-source information retrieval software library. Our search system is developed with high performance and support real-time key word queries.
+
+First, we have crawled all the author, conference and journal html pages on dblp, the downloading can be accessed here:
+链接：http://pan.baidu.com/s/1jINKUAM 密码：8r6g
+
+Then, we have created index for all the pages. In order to promote the speed of searching, I create the index separately since the search type can be chose on the search page.
+the index can be downloaded here:
+Index of Author pages:  链接：http://pan.baidu.com/s/1gf4UhpD 密码：gy19
+Index of Conference pages: 链接：http://pan.baidu.com/s/1jHN4FT8 密码：d0n6
+Index of Journal pages:  链接：http://pan.baidu.com/s/1cdublO 密码：xg9q
+
+The project can be access by fixing the index paths.
+
+In the implementing process, 
+
+1. extract the text from html pages
+After crawling all three types of pages, we need to get the text from the html format. 
+Within this part, we use the library HTML parser to help us. Htmlparser is a toolkit that can provide convenient functions to parse html pages. 
+ 
+There are three types only, so parsing files is not difficult. HymlParser.java gives the detailed methods of parsing.
+
+2. Create the index
+It is worth mentioning that, there are several points needed to notice in the process of creating index. For instance, 
+here we have better to new only one field and more fields creating just reassigning the new field attributes to it, resulting in better performance in creating index. 
+Moreover and importantly, after we write all the document into the writer, one should never forget to close the writer, or the index cannot be used for search because it is ready for be written still. 
+Since our data is tremendous, so we should pay much attention in everything we can to promote the performance.
+
+3. Search the index
+Thanks to Lucene, it is relatively easy to finish the searching part. 
+
+     Tool                   	        Version 
+     IDE                   	Eclipse: Mars.2 Release (4.5.2) 
+    Server 	                  Apache apache-tomcat-8.0.35 
+     JDK 	                         jdk1.8.0_74 
+   Key Library 	                   Lucene4.3.1 
