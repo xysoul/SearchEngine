@@ -2,6 +2,9 @@ This is a course project for Web Search and Mining which is used for search dblp
 
 This is a search engine for DBLP. After crawling all three types of pages, author pages, conference proceedings pages and journal pages from DBLP (totally near 2 million web pages), we parse the web pages and construct index based on Lucene, a free and open-source information retrieval software library. Our search system is developed with high performance and support real-time key word queries.
 
+/Indexing: this is the code of creating the index.
+/dblpSearch: this contains the code of searching and the web system.
+
 First, we have crawled all the author, conference and journal html pages on dblp, the downloading can be accessed here:
 链接：http://pan.baidu.com/s/1jINKUAM 密码：8r6g
 
